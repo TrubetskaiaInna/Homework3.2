@@ -9,4 +9,18 @@ let obj = {
   8: ['t', 'u', 'v'],
   9: ['w', 'x', 'y', 'z']
 }
-
+const countResult = (str) => {
+  let arrResult = []
+  let arrStr = str.split('')
+  let arrKeys = Object.keys(obj)
+  for (let k = 0; k < arrStr.length; k++) {
+    for (let j = 0; j < arrKeys.length; j++) {
+      for (let i = 0; i < obj[arrKeys[j]].length; i++) {
+        if (obj[arrKeys[j]][i] === arrStr[k]) {
+          arrResult.push(arrKeys[j], i + 1)
+        }
+      }
+    }
+  }
+  return arrResult
+}
