@@ -24,3 +24,6 @@ const countResult = (str) => {
   }
   return arrResult
 }
+let someStr = 'hello world'
+let testResult = countResult(someStr)
+console.log(testResult)
