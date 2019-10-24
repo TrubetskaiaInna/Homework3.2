@@ -17,7 +17,7 @@ const countResult = (str) => {
     for (let j = 0; j < arrKeys.length; j++) {
       for (let i = 0; i < obj[arrKeys[j]].length; i++) {
         if (obj[arrKeys[j]][i] === arrStr[k]) {
-          arrResult.push(arrKeys[j], i + 1)
+          arrResult[k] = 'press ' + '"' + arrKeys[j] + '"' + ' ' + Number(i + 1) + ' times'
         }
       }
     }
