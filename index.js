@@ -1,4 +1,4 @@
-let obj = {
+const obj = {
   0: [' '],
   2: ['a', 'b', 'c'],
   3: ['d', 'e', 'f'],
@@ -10,20 +10,20 @@ let obj = {
   9: ['w', 'x', 'y', 'z']
 }
 const countResult = (str) => {
-  let arrResult = []
-  let arrStr = str.split('')
-  let arrKeys = Object.keys(obj)
-  for (let k = 0; k < arrStr.length; k++) {
-    for (let j = 0; j < arrKeys.length; j++) {
-      for (let i = 0; i < obj[arrKeys[j]].length; i++) {
-        if (obj[arrKeys[j]][i] === arrStr[k]) {
-          arrResult[k] = 'press ' + '"' + arrKeys[j] + '"' + ' ' + Number(i + 1) + ' times'
+  const arrResult = []
+  const arrStr = str.split('')
+  const arrKeys = Object.keys(obj)
+  arrStr.forEach(function (element2, index2) {
+    arrKeys.forEach(function (element, index) {
+      obj[arrKeys[index]].forEach(function (element3, index3) {
+        if (element3 === element2) {
+          arrResult[index2] = 'press ' + '"' + (element) + '"' + ' ' + (index3 + 1) + ' times'
         }
-      }
-    }
-  }
+      })
+    })
+  })
   return arrResult
 }
-let someStr = 'hello world'
-let testResult = countResult(someStr)
+const someStr = 'hello world'
+const testResult = countResult(someStr)
 console.log(testResult)
